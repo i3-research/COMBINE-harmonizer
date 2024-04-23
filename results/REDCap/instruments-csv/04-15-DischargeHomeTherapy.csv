@@ -1,0 +1,10 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+discharge_home_therapy_04_15,discharge_home_therapy,,yesno,discharge_home_therapy,,,,,,,,,,,,,
+discharge_home_therapy_ventilator_04_15,discharge_home_therapy,,yesno,discharge_home_therapy_ventilator,,,,,,,,,,,,,
+discharge_home_therapy_oxygen_04_15,discharge_home_therapy,,yesno,discharge_home_therapy_oxygen,,,,,,,,,,,,,
+discharge_home_therapy_gavage_tube_feed_04_15,discharge_home_therapy,,yesno,discharge_home_therapy_gavage_tube_feed,,,,,,,,,,,,,
+discharge_home_therapy_gastrostomy_tube_feed_04_15,discharge_home_therapy,,yesno,discharge_home_therapy_gastrostomy_tube_feed,,,,,,,,,,,,,
+discharge_home_therapy_temperature_blanket_04_15,discharge_home_therapy,,yesno,discharge_home_therapy_temperature_blanket,,,,,,,,,,,,,
+discharge_home_therapy_anticonvulsant_medication_04_15,discharge_home_therapy,,yesno,discharge_home_therapy_anticonvulsant_medication,,,,,,,,,,,,,
+discharge_home_therapy_other_04_15,discharge_home_therapy,,yesno,discharge_home_therapy_other,,,,,,,,,,,,,
+discharge_home_therapy_other_text_04_15,discharge_home_therapy,,text,discharge_home_therapy_other_text,,,,,,,,,,,,,

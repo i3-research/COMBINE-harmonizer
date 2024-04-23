@@ -1,0 +1,11 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+bradycardia_event_number_02_13,bradycardia,,text,bradycardia_event_number,,,,,,,,,,,,,
+bradycardia_below70_over15min_02_13,bradycardia,,yesno,bradycardia_below70_over15min,,,,,,,,,,,,,
+bradycardia_ekg_02_13,bradycardia,,yesno,bradycardia_ekg,,,,,,,,,,,,,
+bradycardia_ekg_result_02_13,bradycardia,,radio,bradycardia_ekg_result,"1, sinus bradycardia | 2, other",bradycardiaEKGResult,,,,,,,,,,,
+bradycardia_ekg_result_other_text_02_13,bradycardia,,text,bradycardia_ekg_result_other_text,,,,,,,,,,,,,
+bradycardia_antiarrhythmia_medication_02_13,bradycardia,,yesno,bradycardia_antiarrhythmia_medication,,,,,,,,,,,,,
+bradycardia_date_02_13,bradycardia,,text,bradycardia_date,,,,,,,,,,,,,
+bradycardia_time_02_13,bradycardia,,text,bradycardia_time,,,,,,,,,,,,,
+bradycardia_duration_02_13,bradycardia,,radio,bradycardia_duration,"1, > 15 mins | 2, > 20 mins | 3, > 30 mins | 4, > 40 mins",bradycardiaDuration,,,,,,,,,,,
+bradycardia_heart_rate_min_02_13,bradycardia,,radio,bradycardia_heart_rate_min,"1, 60-69 bpm | 2, 50-59 bpm | 3, < 50 bpm",bradycardiaHeartRateMin,,,,,,,,,,,
