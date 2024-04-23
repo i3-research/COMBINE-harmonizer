@@ -1,0 +1,41 @@
+# Output directory
+out_dir:
+
+# Input directory of the LH sas dataset
+LH_sas_dir:
+# Input directory of the OC sas dataset
+OC_sas_dir:
+
+# Input directory of the LH Follow-up sas dataset
+LH_follow_up_sas_dir:
+# Input directory of the OC Follow-up sas dataset
+OC_follow_up_sas_dir:
+
+# Input directory of the LH Analysis sas dataset
+LH_analysis_sas_dir:
+# Input directory of the OC Analysis sas dataset
+OC_analysis_sas_dir:
+
+# Input directory of the LH dataset
+LH_dir:
+# Input directory of the OC dataset
+OC_dir:
+
+# Input directory of the LH Follow-up dataset
+LH_follow_up_dir:
+# Input directory of the OC Follow-up dataset
+OC_follow_up_dir:
+
+# Input directory of the LH analysis dataset
+LH_analysis_dir:
+# Input directory of the OC analysis dataset
+OC_analysis_dir:
+
+# Additional value mapping for the categorical variables
+# not listed in the .xlsx due to data privacy concern.
+dictionary_map:
+  MRIReader:
+
+# (Optional) REDCap related information
+redcap_token:
+redcap_host:

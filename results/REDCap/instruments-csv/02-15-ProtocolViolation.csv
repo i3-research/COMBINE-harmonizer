@@ -1,0 +1,10 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+violation_number_02_15,protocol_violation,,text,violation_number,,,,,,,,,,,,,
+violation_date_02_15,protocol_violation,,text,violation_date,,,,,,,,,,,,,
+violation_nature_02_15,protocol_violation,,radio,violation_nature,"1, hypothermia never started | 2, hypothermia initiated at < 6 hrs or > 24 hrs | 3, hypothermia discontinued before 96 hrs | 4, wrong treatment group | 5, other | 6, infant ineligible | 7, no consent | 8, neuro exam at eligibility not done",violationNature,,,,,,,,,,,
+violation_treatment_assign_02_15,protocol_violation,,yesno,violation_treatment_assign,,,,,,,,,,,,,
+violation_treatment_receive_02_15,protocol_violation,,yesno,violation_treatment_receive,,,,,,,,,,,,,
+violation_other_text_02_15,protocol_violation,,text,violation_other_text,,,,,,,,,,,,,
+violation_circumstance_02_15,protocol_violation,,radio,violation_circumstance,"1, equipment not available | 2, equipment malfunctioned | 3, infant transferred out of study site | 4, parents withdrew consent | 5, neonatologist withdrew child from study | 6, other",violationCircumstance,,,,,,,,,,,
+violation_other_cirumstance_text_02_15,protocol_violation,,text,violation_other_cirumstance_text,,,,,,,,,,,,,
+violation_comment_02_15,protocol_violation,,text,violation_comment,,,,,,,,,,,,,

@@ -1,0 +1,11 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+cardio_time_slot_02_02,cardiovascular,,text,cardio_time_slot,,,,,,,,,,,,,
+cardio_date_02_02,cardiovascular,,text,cardio_date,,,,,,,,,,,,,
+cardio_time_02_02,cardiovascular,,text,cardio_time,,,,,,,,,,,,,
+cardio_systolic_blood_pressure_mmhg_02_02,cardiovascular,,text,cardio_systolic_blood_pressure_mmhg,,,,,,,,,,,,,
+cardio_diastolic_blood_pressure_mmhg_02_02,cardiovascular,,text,cardio_diastolic_blood_pressure_mmhg,,,,,,,,,,,,,
+cardio_heart_rate_bpm_02_02,cardiovascular,,text,cardio_heart_rate_bpm,,,,,,,,,,,,,
+cardio_volume_expand_02_02,cardiovascular,,yesno,cardio_volume_expand,,,,,,,,,,,,,
+cardio_inotropic_agent_02_02,cardiovascular,,yesno,cardio_inotropic_agent,,,,,,,,,,,,,
+cardio_blood_transfusion_02_02,cardiovascular,,yesno,cardio_blood_transfusion,,,,,,,,,,,,,
+cardio_platelets_02_02,cardiovascular,,yesno,cardio_platelets,,,,,,,,,,,,,

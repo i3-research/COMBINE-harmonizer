@@ -1,0 +1,12 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+limit_care_discussed_with_family_04_17,discharge_limitation_of_care,,yesno,limit_care_discussed_with_family,,,,,,,,,,,,,
+limit_care_recommend_solely_by_clinical_team_04_17,discharge_limitation_of_care,,yesno,limit_care_recommend_solely_by_clinical_team,,,,,,,,,,,,,
+limit_care_agreed_by_family_and_care_team_04_17,discharge_limitation_of_care,,yesno,limit_care_agreed_by_family_and_care_team,,,,,,,,,,,,,
+limit_care_no_further_mechanical_ventilation_and_intubation_04_17,discharge_limitation_of_care,,yesno,limit_care_no_further_mechanical_ventilation_and_intubation,,,,,,,,,,,,,
+limit_care_no_further_ventilation_with_bag_and_mask_04_17,discharge_limitation_of_care,,yesno,limit_care_no_further_ventilation_with_bag_and_mask,,,,,,,,,,,,,
+limit_care_no_further_medications_to_support_bp_04_17,discharge_limitation_of_care,,yesno,limit_care_no_further_medications_to_support_bp,,,,,,,,,,,,,
+limit_care_no_further_chest_compression_04_17,discharge_limitation_of_care,,yesno,limit_care_no_further_chest_compression,,,,,,,,,,,,,
+limit_care_no_further_emergency_medication_04_17,discharge_limitation_of_care,,yesno,limit_care_no_further_emergency_medication,,,,,,,,,,,,,
+limit_care_dnr_04_17,discharge_limitation_of_care,,yesno,limit_care_dnr,,,,,,,,,,,,,
+limit_care_dnr_date_04_17,discharge_limitation_of_care,,text,limit_care_dnr_date,,,,,,,,,,,,,
+limit_care_dnr_time_04_17,discharge_limitation_of_care,,text,limit_care_dnr_time,,,,,,,,,,,,,

@@ -1,0 +1,10 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+interrupt_number_02_16,interruption_of_intervention,,text,interrupt_number,,,,,,,,,,,,,
+interrupt_02_16,interruption_of_intervention,,yesno,interrupt,,,,,,,,,,,,,
+interrupt_reason_02_16,interruption_of_intervention,,radio,interrupt_reason,"1, imaging | 2, equipment malfunctioned | 3, equipment safety shut off | 4, serious adverse event | 5, surgery | 6, other",interruptReason,,,,,,,,,,,
+interrupt_reason_text_02_16,interruption_of_intervention,,text,interrupt_reason_text,,,,,,,,,,,,,
+interrupt_date_02_16,interruption_of_intervention,,text,interrupt_date,,,,,,,,,,,,,
+interrupt_time_02_16,interruption_of_intervention,,text,interrupt_time,,,,,,,,,,,,,
+interrupt_restart_date_02_16,interruption_of_intervention,,text,interrupt_restart_date,,,,,,,,,,,,,
+interrupt_restart_time_02_16,interruption_of_intervention,,text,interrupt_restart_time,,,,,,,,,,,,,
+interrupt_restart_esophageal_temperature_c_02_16,interruption_of_intervention,,text,interrupt_restart_esophageal_temperature_c,,,,,,,,,,,,,
