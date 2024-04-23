@@ -1,1 +1,9 @@
 /__
+*.egg-info
+/build
+__pycache__
+.nfs*
+*.zip
+
+/config.yaml
+/HIE-out

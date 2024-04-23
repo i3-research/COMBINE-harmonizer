@@ -1,0 +1,58 @@
+[build-system]
+requires = [
+    'setuptools',
+]
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'COMBINE-harmonizer'
+version = '0.0.1'
+dependencies = [
+    'PyYAML==6.0.2',
+    'pandas==2.2.2',
+    'numpy==2.0.1',
+    'SciencePlots==2.1.1',
+    'statsmodels==0.14.2',
+    'requests==2.32.3',
+    'tqdm==4.66.5',
+    'openpyxl==3.1.5',
+    'XlsxWriter==3.2.0',
+    'scikit-learn==1.5.1',
+    'nbformat==5.10.4',
+    'nbconvert==7.16.4',
+    'jupyter==1.1.1',
+]
+authors = [
+    {name = 'Chuan-Heng Hsiao', email = 'Chuan-Heng.Hsiao@childrens.harvard.edu'},
+    {name = 'Rutvi Vyas', email = 'Rutvi.Vyas@childrens.harvard.edu'},
+    {name = 'Anna Foster', email = 'Anna.Foster@childrens.harvard.edu'},
+    {name = 'P. Ellen Grant', email = 'Ellen.Grant@childrens.harvard.edu'},
+    {name = 'Yangming Ou', email = 'Yangming.Ou@childrens.harvard.edu'},
+]
+description = ""
+readme = 'README.md'
+license = {file = "LICENSE.txt"}
+keywords = [
+]
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'Operating System :: OS Independent',
+]
+
+[project.urls]
+# Homepage      = ""
+# Documentation = ""
+# Repository    = ""
+# "Bug Tracker" = ""
+# Changelog = ""
+
+[project.scripts]
+COMBINE-exec-all = 'COMBINE_harmonizer.cmds.exec_all:main'
+
+[tool.setuptools.packages.find]
+include = [
+    'COMBINE_harmonizer',
+]
+exclude = [
+    'tests*',
+]

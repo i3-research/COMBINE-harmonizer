@@ -1,0 +1,8 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+normothermia_at_end_intervention_03_01_s,post_temperature_summary,,yesno,normothermia_at_end_intervention,,,,,,,,,,,,,
+normothermia_date_03_01_s,post_temperature_summary,,text,normothermia_date,,,,,,,,,,,,,
+normothermia_time_03_01_s,post_temperature_summary,,text,normothermia_time,,,,,,,,,,,,,
+normothermia_axillary_temperature_c_03_01_s,post_temperature_summary,,text,normothermia_axillary_temperature_c,,,,,,,,,,,,,
+no_normothermia_reason_03_01_s,post_temperature_summary,,text,no_normothermia_reason,,,,,,,,,,,,,
+cool_after_intervention_03_01_s,post_temperature_summary,,radio,cool_after_intervention,"1, receive cooling as part of usual care at the site | 2, receive rewarming as part of usual care at the site | 3, other",coolAfterIntervention,,,,,,,,,,,
+cool_after_intervention_text_03_01_s,post_temperature_summary,,text,cool_after_intervention_text,,,,,,,,,,,,,
