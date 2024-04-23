@@ -1,0 +1,10 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+respiratory_time_slot_02_03,respiratory,,text,respiratory_time_slot,,,,,,,,,,,,,
+respiratory_date_02_03,respiratory,,text,respiratory_date,,,,,,,,,,,,,
+respiratory_time_02_03,respiratory,,text,respiratory_time,,,,,,,,,,,,,
+respiratory_support_type_02_03,respiratory,,radio,respiratory_support_type,"1, none | 2, HFV | 3, IMV | 4, CPAP | 5, hood | 6, nasal connula oxygen | 7, high flow nasal connula",respiratorySupportType,,,,,,,,,,,
+respiratory_fio2_02_03,respiratory,,text,respiratory_fio2,,,,,,,,,,,,,
+respiratory_rate_hz_02_03,respiratory,,text,respiratory_rate_hz,,,,,,,,,,,,,
+respiratory_pip_cmh2o_02_03,respiratory,,text,respiratory_pip_cmh2o,,,,,,,,,,,,,
+respiratory_map_cmh2o_02_03,respiratory,,text,respiratory_map_cmh2o,,,,,,,,,,,,,
+respiratory_peep_cmh2o_02_03,respiratory,,text,respiratory_peep_cmh2o,,,,,,,,,,,,,

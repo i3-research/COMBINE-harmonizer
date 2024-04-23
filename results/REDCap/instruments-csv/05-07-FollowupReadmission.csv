@@ -1,0 +1,10 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+followup_center_20_07,followup_readmission,,text,followup_center,,,,,,,,,,,,,
+followup_id_20_07,followup_readmission,,text,followup_id,,,,,,,,,,,,,
+unique_followup_id_20_07,followup_readmission,,text,unique_followup_id,,,,,,,,,,,,,
+readmission_number_20_07,followup_readmission,,text,readmission_number,,,,,,,,,,,,,
+readmission_time_period_20_07,followup_readmission,,radio,readmission_time_period,"1, before 1st birthday | 2, after 1st birthday",readmissionTimePeriod,,,,,,,,,,,
+readmission_primary_cause_20_07,followup_readmission,,radio,readmission_primary_cause,"1, respiratory | 2, CNS | 3, surgery | 4, infection | 5, growth and nutrition | 6, environmental | 7, other | 8, apnea | 9, reflux | 10, apparent life threatening event | 11, trauma (accidental) | 12, trauma (non-accidental) | 13, vomitting, diarrhea, dehydration | 14, sleep study",readmissionPrimaryCause,,,,,,,,,,,
+readmission_primary_cause_other_text_20_07,followup_readmission,,text,readmission_primary_cause_other_text,,,,,,,,,,,,,
+readmission_length_of_stay_20_07,followup_readmission,,radio,readmission_length_of_stay,"1, 1 week or less | 2, more than 1 week",readmissionLengthOfStay,,,,,,,,,,,
+readmission_icu_20_07,followup_readmission,,yesno,readmission_icu,,,,,,,,,,,,,
