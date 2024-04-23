@@ -1,0 +1,12 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+temperature_time_slot_02_01,temperature,,text,temperature_time_slot,,,,,,,,,,,,,
+temperature_time_slot_no_form_02_01,temperature,,yesno,temperature_time_slot_no_form,,,,,,,,,,,,,
+temperature_date_02_01,temperature,,text,temperature_date,,,,,,,,,,,,,
+temperature_time_02_01,temperature,,text,temperature_time,,,,,,,,,,,,,
+skin_temperature_c_02_01,temperature,,text,skin_temperature_c,,,,,,,,,,,,,
+axillary_temperature_c_02_01,temperature,,text,axillary_temperature_c,,,,,,,,,,,,,
+esophageal_temperature_c_02_01,temperature,,text,esophageal_temperature_c,,,,,,,,,,,,,
+blanket_temperature_c_02_01,temperature,,text,blanket_temperature_c,,,,,,,,,,,,,
+servo_set_temperature_c_02_01,temperature,,text,servo_set_temperature_c,,,,,,,,,,,,,
+alteration_skin_integrity_02_01,temperature,,yesno,alteration_skin_integrity,,,,,,,,,,,,,
+shiver_02_01,temperature,,yesno,shiver,,,,,,,,,,,,,
