@@ -1,0 +1,11 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+mri_date_03_05_s,post_mri_summary,,text,mri_date,,,,,,,,,,,,,
+mri_time_03_05_s,post_mri_summary,,text,mri_time,,,,,,,,,,,,,
+mri_available_03_05_s,post_mri_summary,,yesno,mri_available,,,,,,,,,,,,,
+mri_obtain_03_05_s,post_mri_summary,,yesno,mri_obtain,,,,,,,,,,,,,
+mri_obtain_window_03_05_s,post_mri_summary,,radio,mri_obtain_window,"1, post-intervention | 2, in-intervention",MRIObtainWindow,,,,,,,,,,,
+mri_obtain_comment_03_05_s,post_mri_summary,,text,mri_obtain_comment,,,,,,,,,,,,,
+mri_no_obtain_reason_03_05_s,post_mri_summary,,radio,mri_no_obtain_reason,"1, no arrangement | 2, MRI unavailable | 3, Other",MRINoObtainReason,,,,,,,,,,,
+mri_no_obtain_reason_text_03_05_s,post_mri_summary,,text,mri_no_obtain_reason_text,,,,,,,,,,,,,
+mri_read_03_05_s,post_mri_summary,,yesno,mri_read,,,,,,,,,,,,,
+mri_score_03_05_s,post_mri_summary,,radio,mri_score,"1, 0 | 2, 1A | 3, 1B | 4, 2A | 5, 2B | 6, 3",MRINRNPatternOfInjury,,,,,,,,,,,

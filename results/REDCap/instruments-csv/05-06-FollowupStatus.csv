@@ -1,0 +1,12 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+followup_center_20_06,followup_status,,text,followup_center,,,,,,,,,,,,,
+followup_id_20_06,followup_status,,text,followup_id,,,,,,,,,,,,,
+unique_followup_id_20_06,followup_status,,text,unique_followup_id,,,,,,,,,,,,,
+status_visit_date_20_06,followup_status,,text,status_visit_date,,,,,,,,,,,,,
+status_birth_date_20_06,followup_status,,text,status_birth_date,,,,,,,,,,,,,
+child_final_status_20_06,followup_status,,radio,child_final_status,"1, child seen, follow-up visit completed | 2, died after initial discharge to home | 3, lost to follow-up | 4, follow-up visit completed in another NRN center | 5, child seen, but follow-up visit incomplete",followupStatus,,,,,,,,,,,
+death_date_20_06,followup_status,,text,death_date,,,,,,,,,,,,,
+death_cause_20_06,followup_status,,radio,death_cause,"1, proven sepsis | 2, suspect sepsis | 3, asphyxial brain injury | 4, multi-organ failure | 5, MAS | 6, PPHN | 7, pneumonia | 8, CLD | 9, other | 10, congenital malformation | 11, BPD/CLD | 12, BPD with infection | 13, aspiration pneumonia | 14, CNS infection | 15, pulmonary infection | 16, trauma, accident | 17, child abuse | 18, dehydration | 19, malignancy | 20, unknown",deathCause,,,,,,,,,,,
+reason_loss_follow_up_20_06,followup_status,,radio,reason_loss_follow_up,"1, adopted | 2, out of area | 3, lost | 4, refused informed consent for follow-up | 5, non compliant | 6, foster care",reasonLossFollowUp,,,,,,,,,,,
+first_visit_date_20_06,followup_status,,text,first_visit_date,,,,,,,,,,,,,
+final_visit_date_20_06,followup_status,,text,final_visit_date,,,,,,,,,,,,,
