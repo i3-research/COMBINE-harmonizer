@@ -1,0 +1,13 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+discontinue_date_02_17,discontinuation_of_intervention,,text,discontinue_date,,,,,,,,,,,,,
+discontinue_time_02_17,discontinuation_of_intervention,,text,discontinue_time,,,,,,,,,,,,,
+discontinue_before_end_period_02_17,discontinuation_of_intervention,,yesno,discontinue_before_end_period,,,,,,,,,,,,,
+discontinue_parents_withdraw_02_17,discontinuation_of_intervention,,yesno,discontinue_parents_withdraw,,,,,,,,,,,,,
+discontinue_physician_withdraw_02_17,discontinuation_of_intervention,,yesno,discontinue_physician_withdraw,,,,,,,,,,,,,
+discontinue_adverse_event_02_17,discontinuation_of_intervention,,yesno,discontinue_adverse_event,,,,,,,,,,,,,
+discontinue_ecmo_02_17,discontinuation_of_intervention,,yesno,discontinue_ecmo,,,,,,,,,,,,,
+discontinue_dnr_02_17,discontinuation_of_intervention,,yesno,discontinue_dnr,,,,,,,,,,,,,
+discontinue_wdraw_support_02_17,discontinuation_of_intervention,,yesno,discontinue_wdraw_support,,,,,,,,,,,,,
+discontinue_death_02_17,discontinuation_of_intervention,,yesno,discontinue_death,,,,,,,,,,,,,
+discontinue_other_02_17,discontinuation_of_intervention,,yesno,discontinue_other,,,,,,,,,,,,,
+discontinue_other_text_02_17,discontinuation_of_intervention,,text,discontinue_other_text,,,,,,,,,,,,,

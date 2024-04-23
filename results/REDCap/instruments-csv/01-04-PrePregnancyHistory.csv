@@ -1,0 +1,10 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+gravida_01_04,pre_pregnancy_history,,text,gravida,,,,,,,,,,,,,
+parity_01_04,pre_pregnancy_history,,text,parity,,,,,,,,,,,,,
+multiple_birth_01_04,pre_pregnancy_history,,yesno,multiple_birth,,,,,,,,,,,,,
+num_fetus_01_04,pre_pregnancy_history,,text,num_fetus,,,,,,,,,,,,,
+prenatal_care_01_04,pre_pregnancy_history,,yesno,prenatal_care,,,,,,,,,,,,,
+hypertension_eclampsia_01_04,pre_pregnancy_history,,yesno,hypertension_eclampsia,,,,,,,,,,,,,
+antepartum_hemorrhage_01_04,pre_pregnancy_history,,yesno,antepartum_hemorrhage,,,,,,,,,,,,,
+thyroid_malfunction_01_04,pre_pregnancy_history,,yesno,thyroid_malfunction,,,,,,,,,,,,,
+diabetes_01_04,pre_pregnancy_history,,yesno,diabetes,,,,,,,,,,,,,

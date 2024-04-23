@@ -1,0 +1,13 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+hematology_02_05,hematology_cbc,,yesno,hematology,,,,,,,,,,,,,
+hematology_time_slot_02_05,hematology_cbc,,text,hematology_time_slot,,,,,,,,,,,,,
+hematology_date_02_05,hematology_cbc,,text,hematology_date,,,,,,,,,,,,,
+hematology_time_02_05,hematology_cbc,,text,hematology_time,,,,,,,,,,,,,
+hematology_wbc_02_05,hematology_cbc,,text,hematology_wbc,,,,,,,,,,,,,
+hematology_hemoglobin_02_05,hematology_cbc,,text,hematology_hemoglobin,,,,,,,,,,,,,
+hematology_polymorph_neutrophils_differential_count_02_05,hematology_cbc,,text,hematology_polymorph_neutrophils_differential_count,,,,,,,,,,,,,
+hematology_monocytes_02_05,hematology_cbc,,text,hematology_monocytes,,,,,,,,,,,,,
+hematology_lymphocytes_02_05,hematology_cbc,,text,hematology_lymphocytes,,,,,,,,,,,,,
+hematology_platelet_count_02_05,hematology_cbc,,text,hematology_platelet_count,,,,,,,,,,,,,
+hematology_pts_02_05,hematology_cbc,,text,hematology_pts,,,,,,,,,,,,,
+hematology_ptts_02_05,hematology_cbc,,text,hematology_ptts,,,,,,,,,,,,,
