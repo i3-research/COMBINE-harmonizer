@@ -1,5 +1,5 @@
 "Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
-post_temperature_time_slot_03_01,post_temperature,,text,post_temperature_time_slot,,,,,,,,,,,,,
+post_temperature_time_slot_day_03_01,post_temperature,,text,post_temperature_time_slot_day,,,,,,,,,,,,,
 post_temperature_date_03_01,post_temperature,,text,post_temperature_date,,,,,,,,,,,,,
 post_temperature_time_03_01,post_temperature,,text,post_temperature_time,,,,,,,,,,,,,
 post_skin_temperature_c_03_01,post_temperature,,text,post_skin_temperature_c,,,,,,,,,,,,,
