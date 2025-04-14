@@ -3,6 +3,7 @@
 from typing import Optional
 
 import pandas as pd
+pd.options.mode.copy_on_write = True
 
 from . import utils_types
 
@@ -52,14 +53,18 @@ def valid_columns(df: pd.DataFrame, columns: list[str], debug_df=False, debug_co
 def postprocess(df: pd.DataFrame, subject_id_idx: str = 'subjectID', center_id_idx: str = 'center', first_columns: Optional[list[str]] = None) -> pd.DataFrame:
     '''
     Postprocess after normalize columns
+
+    1. center-id to_center
+    2. setup uniqueID
+    3. reorder first-columns
     '''
 
     df[center_id_idx] = df[center_id_idx].apply(utils_types.to_center)
     df['uniqueID'] = unique_id(df, subject_id_idx, center_id_idx)
     if first_columns is None:
         first_columns = [center_id_idx, subject_id_idx, 'uniqueID']
-    post_columns = [column for column in df.columns if column not in first_columns]
-    columns = first_columns + post_columns
+    other_columns = [column for column in df.columns if column not in first_columns]
+    columns = first_columns + other_columns
     df = df[columns]
 
     return df
@@ -70,7 +75,8 @@ def postprocess(df: pd.DataFrame, subject_id_idx: str = 'subjectID', center_id_i
 #####
 def check_empty(df: pd.DataFrame):
     for idx, column in enumerate(df.columns):
-        print(f"({idx}/{len(df.columns)}) column: {column} ({len(df) - df[column].isnull().sum()} / {df[column].isnull().sum()})")
+        print(
+            f"({idx}/{len(df.columns)}) column: {column} ({len(df) - df[column].isnull().sum()} / {df[column].isnull().sum()})")
 
 
 #####
