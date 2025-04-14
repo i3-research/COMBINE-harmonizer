@@ -1,5 +1,5 @@
 "Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
-imaging_time_slot_02_09,imaging_report,,text,imaging_time_slot,,,,,,,,,,,,,
+imaging_number_02_09,imaging_report,,text,imaging_number,,,,,,,,,,,,,
 head_sonogram_02_09,imaging_report,,yesno,head_sonogram,,,,,,,,,,,,,
 head_sonogram_date_02_09,imaging_report,,text,head_sonogram_date,,,,,,,,,,,,,
 head_sonogram_time_02_09,imaging_report,,text,head_sonogram_time,,,,,,,,,,,,,

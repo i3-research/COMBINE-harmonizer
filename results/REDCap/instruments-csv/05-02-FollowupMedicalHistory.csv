@@ -2,6 +2,7 @@
 followup_center_20_02,followup_medical_history,,text,followup_center,,,,,,,,,,,,,
 followup_id_20_02,followup_medical_history,,text,followup_id,,,,,,,,,,,,,
 unique_followup_id_20_02,followup_medical_history,,text,unique_followup_id,,,,,,,,,,,,,
+site_id_20_02,followup_medical_history,,text,site_id,,,,,,,,,,,,,
 rehospitalize_20_02,followup_medical_history,,yesno,rehospitalize,,,,,,,,,,,,,
 number_rehospitalize_20_02,followup_medical_history,,text,number_rehospitalize,,,,,,,,,,,,,
 operation_20_02,followup_medical_history,,yesno,operation,,,,,,,,,,,,,

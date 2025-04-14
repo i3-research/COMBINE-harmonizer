@@ -12,4 +12,5 @@ discharge_eeg_finding_consistent_with_seizure_time_04_13,discharge_seizure,,text
 discharge_eeg_abnormal_background_activity_04_13,discharge_seizure,,yesno,discharge_eeg_abnormal_background_activity,,,,,,,,,,,,,
 discharge_eeg_abnormal_background_activity_date_04_13,discharge_seizure,,text,discharge_eeg_abnormal_background_activity_date,,,,,,,,,,,,,
 discharge_eeg_abnormal_background_activity_time_04_13,discharge_seizure,,text,discharge_eeg_abnormal_background_activity_time,,,,,,,,,,,,,
-discharge_anticonvulsants_over72h_04_13,discharge_seizure,,yesno,discharge_anticonvulsants_over72h,,,,,,,,,,,,,
+discharge_anticonvulsants_greater72h_04_13,discharge_seizure,,yesno,discharge_anticonvulsants_greater72h,,,,,,,,,,,,,
+discharge_anticonvulsants_04_13,discharge_seizure,,yesno,discharge_anticonvulsants,,,,,,,,,,,,,
