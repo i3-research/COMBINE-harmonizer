@@ -1,0 +1,13 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+followup_center_20_09,followup_secondary_analysis,,text,followup_center,,,,,,,,,,,,,
+followup_id_20_09,followup_secondary_analysis,,text,followup_id,,,,,,,,,,,,,
+unique_followup_id_20_09,followup_secondary_analysis,,text,unique_followup_id,,,,,,,,,,,,,
+blindness_20_09,followup_secondary_analysis,,yesno,blindness,,,,,,,,,,,,,
+moderate_severe_cerebral_palsy_20_09,followup_secondary_analysis,,yesno,moderate_severe_cerebral_palsy,,,,,,,,,,,,,
+cerebral_palsy_merge_20_09,followup_secondary_analysis,,yesno,cerebral_palsy_merge,,,,,,,,,,,,,
+gastrostomy_tube_b_20_09,followup_secondary_analysis,,yesno,gastrostomy_tube_b,,,,,,,,,,,,,
+gross_motor_function_level_severity_20_09,followup_secondary_analysis,,radio,gross_motor_function_level_severity,"1, normal | 2, mild | 3, moderate | 4, severe | 5, death",severity,,,,,,,,,,,
+hearing_impaired_with_aid_20_09,followup_secondary_analysis,,yesno,hearing_impaired_with_aid,,,,,,,,,,,,,
+hearing_impaired_level_20_09,followup_secondary_analysis,,radio,hearing_impaired_level,"1, normal | 2, mild | 3, moderate | 4, severe | 5, death",severity,,,,,,,,,,,
+multiple_impairment_20_09,followup_secondary_analysis,,yesno,multiple_impairment,,,,,,,,,,,,,
+after_discharge_seizure_20_09,followup_secondary_analysis,,yesno,after_discharge_seizure,,,,,,,,,,,,,
