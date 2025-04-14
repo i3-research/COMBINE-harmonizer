@@ -2,6 +2,7 @@
 followup_center_20_08,followup_lost_follow_up,,text,followup_center,,,,,,,,,,,,,
 followup_id_20_08,followup_lost_follow_up,,text,followup_id,,,,,,,,,,,,,
 unique_followup_id_20_08,followup_lost_follow_up,,text,unique_followup_id,,,,,,,,,,,,,
+site_id_20_08,followup_lost_follow_up,,text,site_id,,,,,,,,,,,,,
 lost_follow_up_information_available_indirect_src_20_08,followup_lost_follow_up,,yesno,lost_follow_up_information_available_indirect_src,,,,,,,,,,,,,
 lost_follow_up_last_contact_date_20_08,followup_lost_follow_up,,text,lost_follow_up_last_contact_date,,,,,,,,,,,,,
 lost_follow_up_form_complete_date_20_08,followup_lost_follow_up,,text,lost_follow_up_form_complete_date,,,,,,,,,,,,,

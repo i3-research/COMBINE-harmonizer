@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+pd.options.mode.copy_on_write = True
+
 from . import constants
 
 
@@ -23,7 +25,8 @@ def load_data_dict(filename: str, sheet_name: str) -> pd.DataFrame:
 
     df_data_dict_valid = _fill_category(df_data_dict_valid)
 
-    sheet_names = df_data_dict_valid[constants.DATA_DICT_CATEGORY].apply(lambda x: constants.CATEGORY_SHEET_MAP.get(x, None))
+    sheet_names = df_data_dict_valid[constants.DATA_DICT_CATEGORY].apply(
+        lambda x: constants.CATEGORY_SHEET_MAP.get(x, None))
     is_valid_sheet_name = sheet_names == sheet_name
 
     df_data_dict_valid = df_data_dict_valid[is_valid_sheet_name]

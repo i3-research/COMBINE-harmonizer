@@ -8,8 +8,8 @@ from .plot import format_scientific_notation
 
 from .utils_mapping import init_mapping
 from .utils_mapping import get_mapping_value
-from .utils_mapping import init_inv_mapping
-from .utils_mapping import get_inv_mapping_value
+from .utils_mapping import init_rank_mapping
+from .utils_mapping import get_rank_mapping_value
 
 from .utils_process import get_columns
 from .utils_process import unique_id
@@ -50,18 +50,18 @@ from .utils_types import to_float
 from .utils_types import to_str
 from .utils_types import to_lower
 
-from .utils_types import to_inv_bool
-from .utils_types import to_inv_int
-from .utils_types import to_inv_float
-from .utils_types import to_inv_text
+from .utils_types import to_numeric_bool
+from .utils_types import to_numeric_int
+from .utils_types import to_numeric_float
+from .utils_types import to_numeric_text
 
 from .utils_values import build_value_map
-from .utils_values import build_inv_value_map
+from .utils_values import build_numeric_value_map
 from .utils_values import normalize_value
-from .utils_values import build_order_map
+from .utils_values import build_variable_order_map
 from .utils_values import reorder_columns
 from .utils_values import cc_to_cc_per_kg
-from .utils_values import inv_values
+from .utils_values import numeric_values
 
 from .utils_flatten_index import flatten_index
 
