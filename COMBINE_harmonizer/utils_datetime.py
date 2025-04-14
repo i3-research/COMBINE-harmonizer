@@ -4,6 +4,7 @@ from typing import Optional
 
 from datetime import datetime
 import pandas as pd
+pd.options.mode.copy_on_write = True
 
 
 def date_to_day(the_date: str, birth_date: str) -> Optional[int]:
@@ -38,14 +39,16 @@ def _parse_datetime(the_date, the_time) -> Optional[datetime]:
         return the_datetime
     except Exception as e:
         if not pd.isnull(the_date) and not pd.isnull(the_time):
-            print(f'[WARN] datetime_to_day_hr: unable to strptime (with %S): the_date: {the_date} the_time: {the_time}')
+            print(
+                f'[WARN] datetime_to_day_hr: unable to strptime (with %S): the_date: {the_date} the_time: {the_time}')
 
     try:
         the_datetime = datetime.strptime(f'{the_date} {the_time}', '%Y-%m-%d %H:%M')
         return the_datetime
     except Exception as e:
         if not pd.isnull(the_date) and not pd.isnull(the_time):
-            print(f'[WARN] datetime_to_day_hr: unable to strptime (with %M): the_date: {the_date} the_time: {the_time}')
+            print(
+                f'[WARN] datetime_to_day_hr: unable to strptime (with %M): the_date: {the_date} the_time: {the_time}')
 
     return None
 
