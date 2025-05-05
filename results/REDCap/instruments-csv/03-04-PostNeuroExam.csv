@@ -18,3 +18,6 @@ post_neuro_exam_abnormal_movement_03_04,post_neuro_exam,,yesno,post_neuro_exam_a
 post_neuro_exam_gag_reflex_absent_03_04,post_neuro_exam,,yesno,post_neuro_exam_gag_reflex_absent,,,,,,,,,,,,,
 post_neuro_exam_hypertonia_03_04,post_neuro_exam,,yesno,post_neuro_exam_hypertonia,,,,,,,,,,,,,
 post_neuro_exam_asym_tonic_neck_reflex_03_04,post_neuro_exam,,yesno,post_neuro_exam_asym_tonic_neck_reflex,,,,,,,,,,,,,
+post_neuro_exam_reflex_score_03_04_1,post_neuro_exam,,text,post_neuro_exam_reflex_score,,,,,,,,,,,,,
+post_neuro_exam_ans_score_03_04_1,post_neuro_exam,,text,post_neuro_exam_ans_score,,,,,,,,,,,,,
+post_total_modified_sarnat_score_03_04_1,post_neuro_exam,,text,post_total_modified_sarnat_score,,,,,,,,,,,,,

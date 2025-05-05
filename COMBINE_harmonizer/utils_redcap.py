@@ -2,8 +2,8 @@
 
 from typing import Any, TypedDict, Optional
 
-
 import pandas as pd
+pd.options.mode.copy_on_write = True
 import json
 import requests
 import time
@@ -274,10 +274,12 @@ def redcap_columns(input_dir: str, filename_info: REDCapFilenameInfo) -> list[RE
     df = pd.read_csv(full_filename, dtype='O')
     is_repeated = constants.FLATTEN_INDEX in df.columns
 
-    valid_columns = [column for column in df.columns if column not in constants.REDCAP_EXCLUDE_FILEINFO_COLUMNS and column not in filename_info.get('exclude_columns', [])]
+    valid_columns = [column for column in df.columns if column not in constants.REDCAP_EXCLUDE_FILEINFO_COLUMNS and column not in filename_info.get(
+        'exclude_columns', [])]
     df = df[valid_columns]
 
-    ret = [copy.deepcopy(_get_redcap_column_map(each, column_map)) for each in df.columns if not each.endswith('.orig')]
+    ret = [copy.deepcopy(_get_redcap_column_map(each, column_map))
+           for each in df.columns if not each.endswith('.orig')]
 
     category = filename_info['category']
     subcategory = filename_info['subcategory']
@@ -307,7 +309,8 @@ def _get_redcap_column_map(column: str, column_map: dict[str, REDCapColumn]) -> 
         return default_redcap_column(column)
 
     if pd.isnull(column_map[column]['field_name']):
-        print(f"[ERROR] _get_redcap_column_map: invalid field_name: column: {column} map: {column_map[column]['field_name']}")
+        print(
+            f"[ERROR] _get_redcap_column_map: invalid field_name: column: {column} map: {column_map[column]['field_name']}")
 
     return column_map[column]
 
@@ -415,7 +418,8 @@ def redcap_normalize_filename_info(filename_info: REDCapFilenameInfo, input_dir:
 
     valid_columns = list(filter(lambda x: not x.endswith('.orig'), df.columns))
     if 'exclude_columns' in filename_info:
-        valid_columns = list(filter(lambda x: not x in filename_info['exclude_columns'], valid_columns))
+        valid_columns = list(
+            filter(lambda x: not x in filename_info['exclude_columns'], valid_columns))
     df = df[valid_columns]
 
     # 2. redcap-normalize
@@ -426,7 +430,8 @@ def redcap_normalize_filename_info(filename_info: REDCapFilenameInfo, input_dir:
     df['study_unique_id'] = df.apply(lambda x: f"{x['_study']}:{x['uniqueID']}", axis=1)
 
     # 4. rename
-    all_column_name_map = {column: f"{column_info['field_name']}_{filename_id}" for column, column_info in column_info_map.items() if column not in exclude_columns}
+    all_column_name_map = {column: f"{column_info['field_name']}_{filename_id}" for column,
+                           column_info in column_info_map.items() if column not in exclude_columns}
     all_column_name_map.update(column_name_map)
 
     df_rename = df.rename(columns=all_column_name_map)
@@ -449,7 +454,8 @@ def redcap_normalize_filename_info(filename_info: REDCapFilenameInfo, input_dir:
     if '_flatten_index' in df_rename:
         df_rename['redcap_repeat_instrument'] = form_name
 
-        df_rename['redcap_repeat_instance'] = df_rename['_flatten_index'].apply(lambda x: _flatten_to_repeat_instance(x, flatten_sep))
+        df_rename['redcap_repeat_instance'] = df_rename['_flatten_index'].apply(
+            lambda x: _flatten_to_repeat_instance(x, flatten_sep))
 
     else:
         df_rename['redcap_repeat_instrument'] = ''
@@ -505,7 +511,8 @@ def redcap_normalize(val: Any, column: str, column_map: REDCapColumnMap) -> str:
         choice_dict = column_info['choices_dict']
 
         if val not in choice_dict:
-            print(f'[WARN] redcap_normalize: val not in choice_dict: val: {val} column: {column} type: {field_type}')
+            print(
+                f'[WARN] redcap_normalize: val not in choice_dict: val: {val} column: {column} type: {field_type}')
             return ''
 
         choice_val = choice_dict[val]
@@ -541,7 +548,7 @@ def import_redcap_data(content: str, data: Any) -> tuple[Exception, Any]:
 
     try:
         r = requests.post(_HOST, data=params, verify=False)
-        time.sleep(1)
+        time.sleep(0.1)
     except Exception as e:
         print(f'[ERROR] (put_redcap_data) unable to post: e: {e}')
         return e, {}
@@ -585,7 +592,7 @@ def put_redcap_data(content: str, data: Any) -> tuple[Exception, Any]:
 
     try:
         r = requests.post(_HOST, data=params, verify=False)
-        time.sleep(1)
+        time.sleep(0.1)
     except Exception as e:
         print(f'[ERROR] (put_redcap_data) unable to post: e: {e}')
         return e, {}
@@ -686,7 +693,7 @@ def get_redcap_data(params: dict, is_raw_data=True, is_raw_header=True) -> tuple
 
     try:
         r = requests.post(_HOST, data=params, verify=False)
-        time.sleep(1)
+        time.sleep(0.1)
     except Exception as e:
         return e, []
 
