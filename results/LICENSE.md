@@ -1,1 +1,1 @@
-[Results from COMBINE-harmonizer](https://github.com/i3-research/COMBINE-harmonizer/tree/main/results) by Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) are marked with [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+[Results from COMBINE-harmonizer](https://github.com/i3-research/COMBINE-harmonizer/tree/v1.1.0/results) by Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) are marked with [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
