@@ -6,7 +6,7 @@ import re
 import time
 
 import pandas as pd
-
+pd.options.mode.copy_on_write = True
 from .constants import FLATTEN_MERGE_COLUMNS, FLATTEN_INDEX, FLATTEN_FOLLOW_UP_COLUMNS
 
 
@@ -28,7 +28,8 @@ def flatten_sheet_name(filename: str):
 
 
 def flatten_columns_with_prefix(df: pd.DataFrame, prefix: str) -> pd.DataFrame:
-    column_map = {column: f'{prefix}:{column}' for column in df.columns if column not in FLATTEN_MERGE_COLUMNS}
+    column_map = {
+        column: f'{prefix}:{column}' for column in df.columns if column not in FLATTEN_MERGE_COLUMNS}
     df_renamed = df.rename(columns=column_map)
     return df_renamed
 
@@ -53,7 +54,8 @@ def flatten(df: pd.DataFrame) -> pd.DataFrame:
     # pivot
     print(f'_flatten: to pivot_table: df: {len(df)}')
     start_timestamp = time.time()
-    df_pivot = pd.pivot_table(df, index=index, columns=[FLATTEN_INDEX], values=value_columns, aggfunc=_agg)
+    df_pivot = pd.pivot_table(df, index=index, columns=[
+                              FLATTEN_INDEX], values=value_columns, aggfunc=_agg)
     end_timestamp = time.time()
     print(f'_flatten: after pivot_table: time: {end_timestamp - start_timestamp}')
 
