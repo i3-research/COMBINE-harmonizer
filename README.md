@@ -73,4 +73,4 @@ Please read [results/README.md](https://github.com/i3-research/COMBINE-harmonize
 
 The Software is © 2025 Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) under the [MIT License](https://opensource.org/license/mit).
 
-[Results from COMBINE-harmonizer (in /results)](https://github.com/i3-research/COMBINE-harmonizer/tree/main/results) by Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) are licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0)
+[Results from COMBINE-harmonizer (in /results)](https://github.com/i3-research/COMBINE-harmonizer/tree/v1.1.0/results) by Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) are licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0)
