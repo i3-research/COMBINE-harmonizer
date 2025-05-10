@@ -1,6 +1,6 @@
 Package: COMBINEHarmonizer
 Title: Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) Harmonizer.
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(
     person("Chuan-Heng", "Hsiao", , "Chuan-Heng.Hsiao@childrens.harvard.edu", role = c("aut", "cre")),
     person("Rutvi", "Vyas", , "Rutvi.Vyas@childrens.harvard.edu", role = c("ctb")),
