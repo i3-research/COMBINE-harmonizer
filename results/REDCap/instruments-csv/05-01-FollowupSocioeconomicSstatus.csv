@@ -2,6 +2,7 @@
 followup_center_20_01,followup_socioeconomic_status,,text,followup_center,,,,,,,,,,,,,
 followup_id_20_01,followup_socioeconomic_status,,text,followup_id,,,,,,,,,,,,,
 unique_followup_id_20_01,followup_socioeconomic_status,,text,unique_followup_id,,,,,,,,,,,,,
+site_id_20_01,followup_socioeconomic_status,,text,site_id,,,,,,,,,,,,,
 ses_visit_date_20_01,followup_socioeconomic_status,,text,ses_visit_date,,,,,,,,,,,,,
 ses_birth_date_20_01,followup_socioeconomic_status,,text,ses_birth_date,,,,,,,,,,,,,
 chronological_age_mo_20_01,followup_socioeconomic_status,,text,chronological_age_mo,,,,,,,,,,,,,

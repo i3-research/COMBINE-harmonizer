@@ -3,6 +3,7 @@
 from typing import Any, Optional
 
 import pandas as pd
+pd.options.mode.copy_on_write = True
 import numpy as np
 
 #####
@@ -64,7 +65,7 @@ def to_int(val: Any, is_suppress_warning: bool = False) -> int:
         return val
 
 
-def to_float(val: Any) -> float:
+def to_float(val: Any, is_suppress_warning: bool = False) -> float:
     '''
     to float type
     '''
@@ -77,7 +78,8 @@ def to_float(val: Any) -> float:
     try:
         return float(val)
     except Exception as e:
-        print(f'[WARN] unable to float: val ({val}/{type(val)}) e: {e}')
+        if not is_suppress_warning:
+            print(f'[WARN] unable to float: val ({val}/{type(val)}) e: {e}')
         return val
 
 
@@ -105,9 +107,9 @@ def to_lower(val: Any) -> str:
 
 
 #####
-# to inv types
+# to numeric types
 #####
-def to_inv_bool(val) -> float:
+def to_numeric_bool(val) -> float:
     '''
     bool to float (0.0 or 1.0)
     '''
@@ -125,11 +127,11 @@ def to_inv_bool(val) -> float:
     elif val in ['unknown']:
         return np.nan
 
-    print(f'[WARN] to_inv_bool: invalid val: {val}')
+    print(f'[WARN] to_numeric_bool: invalid val: {val}')
     return 0.0
 
 
-def to_inv_int(val) -> float:
+def to_numeric_int(val) -> float:
     '''
     int to float (assuming already int).
     '''
@@ -139,7 +141,7 @@ def to_inv_int(val) -> float:
     return float(val)
 
 
-def to_inv_float(val) -> float:
+def to_numeric_float(val) -> float:
     '''
     float to float
     '''
@@ -149,7 +151,7 @@ def to_inv_float(val) -> float:
     return float(val)
 
 
-def to_inv_text(val) -> str:
+def to_numeric_text(val) -> str:
     '''
     inverse text: still the same value.
     '''
