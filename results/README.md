@@ -51,4 +51,4 @@ All the variables are aggregated in `data_dictionary.csv` generated from REDCap.
 
 ## License
 
-[Results from COMBINE-harmonizer](https://github.com/i3-research/COMBINE-harmonizer/tree/main/results) by Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) are licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0)
+[Results from COMBINE-harmonizer](https://github.com/i3-research/COMBINE-harmonizer/tree/v1.1.0/results) by Consortium Of MRI Biomarkers In Neonatal Encephalopathy (COMBINE) are licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0)
