@@ -2,3 +2,8 @@
 followup_center_20_00,followup_id,,text,followup_center,,,,,,,,,,,,,
 followup_id_20_00,followup_id,,text,followup_id,,,,,,,,,,,,,
 unique_followup_id_20_00,followup_id,,text,unique_followup_id,,,,,,,,,,,,,
+site_id_20_00,followup_id,,text,site_id,,,,,,,,,,,,,
+visit_date_20_00,followup_id,,text,visit_date,,,,,,,,,,,,,
+birth_number_20_00,followup_id,,text,birth_number,,,,,,,,,,,,,
+center_orig_20_00,followup_id,,text,center_orig,,,,,,,,,,,,,
+birth_date_20_00,followup_id,,text,birth_date,,,,,,,,,,,,,

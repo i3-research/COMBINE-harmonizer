@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-
+pd.options.mode.copy_on_write = True
 from . import constants
 
 
@@ -9,16 +9,18 @@ def flatten_index(df: pd.DataFrame, flatten_ids: list[str], subject_id_idx: str 
     '''
     flatten index
     '''
-    df[f'{constants.FLATTEN_INDEX}_tmp'] = df.apply(lambda x: _flatten_index(x, flatten_ids), axis=1)
+    df[f'{constants.FLATTEN_INDEX}_tmp'] = df.apply(
+        lambda x: _flatten_index(x, flatten_ids), axis=1)
     if unique_id_map is None:
         unique_ids = list(df[f'{constants.FLATTEN_INDEX}_tmp'].unique())
         unique_ids.sort()
         unique_id_map = {each: each for each in unique_ids}
 
-    df[constants.FLATTEN_INDEX] = df[f'{constants.FLATTEN_INDEX}_tmp'].apply(lambda x: unique_id_map[x])
+    df[constants.FLATTEN_INDEX] = df[f'{constants.FLATTEN_INDEX}_tmp'].apply(
+        lambda x: unique_id_map[x])
     del df[f'{constants.FLATTEN_INDEX}_tmp']
 
-    print(f"flatten_index: flatten_ids: {flatten_ids} unique_id_map: {unique_id_map} the_type: {df[constants.FLATTEN_INDEX].dtype}")
+    print(f"flatten_index: flatten_ids: {flatten_ids} unique_id_map: {unique_id_map} the_type: {df[constants.FLATTEN_INDEX].dtype}")  # noqa
 
     _ensure_unique_flatten_index(df, subject_id_idx, center_id_idx)
 
@@ -43,7 +45,7 @@ def _ensure_unique_flatten_index(df: pd.DataFrame, subject_id_idx: str = 'subjec
         current_idx = row[constants.FLATTEN_INDEX]
         if current_unique_id == pre_unique_id and current_idx == pre_index:
             count += 1
-            print(f"[WARN] not unique: ({idx}/{len(df)}) unique_id: {current_unique_id} flatten_index: {current_idx}")
+            print(f"[WARN] not unique: ({idx}/{len(df)}) unique_id: {current_unique_id} flatten_index: {current_idx}")  # noqa
             # df.loc[idx, '_flatten_index'] += f'-{count:02d}'
         else:
             count = 0

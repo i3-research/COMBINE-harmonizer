@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+pd.options.mode.copy_on_write = True
 import numpy as np
-from tqdm import tqdm
 import statsmodels.api as sm
 
 import matplotlib.pyplot as plt
@@ -12,7 +12,6 @@ from . import plot
 
 def logit(df: pd.DataFrame, x_columns: list[str], y_columns: list[str]):
     rets = []
-    y_column0 = y_columns[0]
     for x_column in x_columns:
         for y_column in y_columns:
             pvalue = np.nan
@@ -41,7 +40,8 @@ def logit(df: pd.DataFrame, x_columns: list[str], y_columns: list[str]):
                 'b0': b0,
                 'b1': b1,
                 'b1_abs': b1_abs,
-                'OR': the_OR,  # https://stats.oarc.ucla.edu/stata/faq/how-do-i-interpret-odds-ratios-in-logistic-regression/
+                # https://stats.oarc.ucla.edu/stata/faq/how-do-i-interpret-odds-ratios-in-logistic-regression/
+                'OR': the_OR,
                 'valid': meta['valid'],
                 'valid_x': meta['valid_x'],
                 'valid_y': meta['valid_y'],
@@ -145,12 +145,14 @@ def plot_logit(df, x_column, y_column, x_column_info=None, y_column_info=None):
 
     # title
     plus_sign = ' + ' if b1 >= 0 else ' '
-    title = '$\\log\\left(\\frac{p}{1 - p}\\right) = %s%s%sx$\n$(n = %s, OR \\approx %s, p \\approx %s)$' % (b0_str, plus_sign, b1_str, len(df_valid), OR_str, pvalue_str)
+    title = '$\\log\\left(\\frac{p}{1 - p}\\right) = %s%s%sx$\n$(n = %s, OR \\approx %s, p \\approx %s)$' % (
+        b0_str, plus_sign, b1_str, len(df_valid), OR_str, pvalue_str)
     plt.title(title)
 
     # heat-map / scatter-plot
     if df_groupby['_count'].max() > 2:
-        plt.scatter(x=df_groupby[x_column], y=df_groupby[y_column], c=df_groupby['_count'], cmap='plasma')
+        plt.scatter(x=df_groupby[x_column], y=df_groupby[y_column],
+                    c=df_groupby['_count'], cmap='plasma')
         cbar = plt.colorbar()
         cbar.ax.set_ylabel('number of patients', rotation=270, labelpad=7)
     else:

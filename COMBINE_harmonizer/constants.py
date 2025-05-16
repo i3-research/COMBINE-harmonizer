@@ -24,6 +24,10 @@ DATA_DICT_DESCRIPTION = 'Variable_Description'
 DATA_DICT_REDCAP_VAR_NAME = 'redcap'
 
 
+# Default ordinal column in ordinal tabs
+DEFAULT_ORDINAL_COLUMN = '_rank'
+
+
 class DataDict(TypedDict):
     Category: str
     Subcategory: str
@@ -40,14 +44,12 @@ class DataDict(TypedDict):
 SHEET_VARIABLES = 'Variables'
 SHEET_MAIN = 'main'
 SHEET_FOLLOW_UP = 'follow-up'
-SHEET_DERIVED_DATA = 'derived data'
 SHEET_NAMING_CONVENTION = 'naming convention'
 
 SHEET_RESERVED_TABS = [
     SHEET_VARIABLES,
     SHEET_MAIN,
     SHEET_FOLLOW_UP,
-    SHEET_DERIVED_DATA,
     SHEET_NAMING_CONVENTION,
 ]
 
@@ -57,7 +59,6 @@ CATEGORY_INTERVENTION = "Intervention"
 CATEGORY_POST_INTERVENTION = "Post-intervention"
 CATEGORY_NICU_DISCHARGE = "NICU Discharge"
 CATEGORY_FOLLOW_UP = "Follow Up"
-CATEGORY_DERIVED_DATA = "Derived Data"
 
 CATEGORIES = [
     CATEGORY_PRE_INTERVENTION,
@@ -65,7 +66,6 @@ CATEGORIES = [
     CATEGORY_POST_INTERVENTION,
     CATEGORY_NICU_DISCHARGE,
     CATEGORY_FOLLOW_UP,
-    CATEGORY_DERIVED_DATA,
 ]
 
 CATEGORY_SHEET_MAP = {
@@ -76,7 +76,6 @@ CATEGORY_SHEET_MAP = {
 
     CATEGORY_FOLLOW_UP: SHEET_FOLLOW_UP,
 
-    CATEGORY_DERIVED_DATA: SHEET_DERIVED_DATA,
 }
 
 CATEGORY_ABBREVIATE_MAP = {
@@ -86,8 +85,6 @@ CATEGORY_ABBREVIATE_MAP = {
     CATEGORY_NICU_DISCHARGE: "discharge",
 
     CATEGORY_FOLLOW_UP: "followup",
-
-    CATEGORY_DERIVED_DATA: "deriv",
 }
 
 CATEGORY_EVENT_MAP = {val: f'{idx} {val}' for idx, val in enumerate(CATEGORIES)}
@@ -148,8 +145,6 @@ SUBCATEGORY_LOST_FOLLOW_UP = 'Lost Followup'
 SUBCATEGORY_PHONE_FOLLOW_UP = 'Phone Followup'
 
 SUBCATEGORY_SECONDARY_ANALYSIS = 'Secondary'
-SUBCATEGORY_NEURO_EXAM_DERIVED = 'Neuro Exam Derived'
-SUBCATEGORY_MRI_DERIVED = 'MRI Derived'
 SUBCATEGORY_OUTCOME = 'Outcome'
 
 SUBCATEGORY_ABBREVIATE_MAP = {  # max: 7 chars.
@@ -209,8 +204,6 @@ SUBCATEGORY_ABBREVIATE_MAP = {  # max: 7 chars.
     SUBCATEGORY_PHONE_FOLLOW_UP: 'phone_follow_up',
 
     SUBCATEGORY_SECONDARY_ANALYSIS: 'secondary_analysis',
-    SUBCATEGORY_NEURO_EXAM_DERIVED: 'neuro_exam_derived',
-    SUBCATEGORY_MRI_DERIVED: 'mri_derived',
     SUBCATEGORY_OUTCOME: 'outcome',
 }
 
@@ -230,7 +223,17 @@ FLATTEN_INDEX = '_flatten_index'
 MAX_INT = 999999999999999999
 
 # Reserved columns for identificatio
-RESERVED_COLUMNS: list[str] = ['_study', 'center', 'subjectID', 'uniqueID', 'MRI_ID', 'followupCenter', 'followupID', 'uniqueFollowupID', '_flatten_index']
+RESERVED_COLUMNS: list[str] = [
+    '_study',
+    'center',
+    'subjectID',
+    'uniqueID',
+    'MRI_ID',
+    'followupCenter',
+    'followupID',
+    'uniqueFollowupID',
+    '_flatten_index'
+]
 
 # The csv file merged and flattened from all other files
 MERGE_FLATTEN_CSV = 'zz-merged-flatten.csv'
@@ -283,6 +286,17 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_PRE_INTERVENTION,
         'subcategory': SUBCATEGORY_MATERNAL_DEMOGRAPHICS,
+        'exclude_columns': [
+            'motherRaceOther1',
+            'motherRaceOther2',
+            'motherRaceOther3',
+            'motherRaceOther4',
+            'motherRaceOther5',
+            'motherRaceOther6',
+            'motherRace2',
+            'motherEducation2',
+            'motherInsurancePublic',
+        ],
     },
     {
         'name': '01-04-pregnancy-history.csv',
@@ -295,12 +309,59 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_PRE_INTERVENTION,
         'subcategory': SUBCATEGORY_LABOR_AND_DELIVERY,
+        'exclude_columns': [
+            'laborAntibioticsCode2',
+            'laborAntibioticsCode3',
+            'laborAntibioticsCode4',
+            'laborAntibioticsCode5',
+            'laborAntibioticsCode6',
+        ],
+    },
+    {
+        'name': '01-05_1-pse.csv',
+        'data_dict': SHEET_MAIN,
+        'exclude_columns': [
+            'cordMishap',
+            'uterineRupture',
+            'placentalProblem',
+            'shoulderDystocia',
+            'maternalHemorrhage',
+            'maternalTrauma',
+            'maternalCardioRespiratoryArrest',
+            'maternalSeizure',
+            'perinatalSentinelEvent',
+        ],
+        'category': CATEGORY_PRE_INTERVENTION,
+        'subcategory': SUBCATEGORY_LABOR_AND_DELIVERY,
+    },
+    {
+        'name': '01-05_2-emergency-csection.csv',
+        'data_dict': SHEET_MAIN,
+        'exclude_columns': [
+            'deliveryMode',
+            'emergencyCSection',
+        ],
+        'category': CATEGORY_PRE_INTERVENTION,
+        'subcategory': SUBCATEGORY_LABOR_AND_DELIVERY,
     },
     {
         'name': '01-06-birth.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_PRE_INTERVENTION,
         'subcategory': SUBCATEGORY_BIRTH_INFORMATION,
+    },
+    {
+        'name': '01-06_1-apgar.csv',
+        'data_dict': SHEET_MAIN,
+        'category': CATEGORY_PRE_INTERVENTION,
+        'subcategory': SUBCATEGORY_BIRTH_INFORMATION,
+        'exclude_columns': [
+            'Apgar5min',
+            'Apgar10min',
+            'Apgar10minLess5',
+            'Apgar10minLessEq5',
+            'Apgar5minLessEq5',
+        ],
     },
     {
         'name': '01-07-pre-temperature.csv',
@@ -333,23 +394,84 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_PRE_INTERVENTION,
         'subcategory': SUBCATEGORY_INFECTION,
+        'exclude_columns': [
+            'pre_PositiveCultureOrganismCode2',
+            'pre_PositiveCultureOrganismCode3',
+            'pre_AntibioticsCode2',
+            'pre_AntibioticsCode3',
+        ],
     },
     {
         'name': '01-10-pre-other-med.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_PRE_INTERVENTION,
         'subcategory': SUBCATEGORY_OTHER_MEDICINE,
+        'exclude_columns': [
+            'pre_Anticonvulsants',
+            'pre_Anticonvulsants2',
+            'pre_Anticonvulsants3',
+            'pre_AnalgesicsSedatives',
+            'pre_AnalgesicsSedatives2',
+            'pre_AnalgesicsSedatives3',
+            'pre_Antipyretics',
+            'pre_Antipyretics2',
+            'pre_Antipyretics3',
+            'pre_Paralytics',
+            'pre_Paralytics2',
+            'pre_Paralytics3',
+        ],
     },
     {
         'name': '01-11-pre-imaging.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_PRE_INTERVENTION,
         'subcategory': SUBCATEGORY_IMAGING_REPORT,
+        'exclude_columns': [
+            'pre_HeadSonogramResult2',
+            'pre_HeadSonogramResult3',
+            'pre_HeadSonogramResult4',
+            'pre_HeadSonogramResult5',
+            'pre_HeadSonogramResult6',
+            'pre_HeadSonogramResult7',
+            'pre_HeadSonogramResult8',
+            'pre_HeadCTResult2',
+            'pre_HeadCTResult3',
+            'pre_HeadCTResult4',
+            'pre_HeadCTResult5',
+            'pre_HeadCTResult6',
+            'pre_HeadCTResult7',
+            'pre_HeadCTResult8',
+            'pre_BrainMRIResult2',
+            'pre_BrainMRIResult3',
+            'pre_BrainMRIResult4',
+            'pre_BrainMRIResult5',
+            'pre_BrainMRIResult6',
+            'pre_BrainMRIResult7',
+            'pre_BrainMRIResult8',
+        ],
     },
     {
         'name': '01-12-neuro-exam.csv',
         'data_dict': SHEET_MAIN,
-        'exclude_columns': [],
+        'exclude_columns': [
+        ],
+        'category': CATEGORY_PRE_INTERVENTION,
+        'subcategory': SUBCATEGORY_NEURO_EXAM,
+    },
+    {
+        'name': '01-12_1-total-modified-sarnat.csv',
+        'data_dict': SHEET_MAIN,
+        'exclude_columns': [
+            'pre_NeuroExamLevelConsciousnessScore',
+            'pre_NeuroExamSpontaneousActivityScore',
+            'pre_NeuroExamPostureScore',
+            'pre_NeuroExamToneScore',
+            'pre_NeuroExamSuckScore',
+            'pre_NeuroExamMoroScore',
+            'pre_NeuroExamPupilsScore',
+            'pre_NeuroExamHeartRateScore',
+            'pre_NeuroExamRespirationScore',
+        ],
         'category': CATEGORY_PRE_INTERVENTION,
         'subcategory': SUBCATEGORY_NEURO_EXAM,
     },
@@ -402,18 +524,63 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_INTERVENTION,
         'subcategory': SUBCATEGORY_INFECTION,
+        'exclude_columns': [
+            'positiveCultureOrganismCode2',
+            'positiveCultureOrganismCode3',
+            'antibioticsCode2',
+            'antibioticsCode3',
+            'rewarmingAntibioticsCode2',
+            'rewarmingAntibioticsCode3',
+        ],
     },
     {
         'name': '02-08-other-med.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_INTERVENTION,
         'subcategory': SUBCATEGORY_OTHER_MEDICINE,
+        'exclude_columns': [
+            'anticonvulsants',
+            'anticonvulsants2',
+            'anticonvulsants3',
+            'analgesicsSedatives',
+            'analgesicsSedatives2',
+            'analgesicsSedatives3',
+            'antipyretics',
+            'antipyretics2',
+            'antipyretics3',
+            'paralytics',
+            'paralytics2',
+            'paralytics3',
+        ],
     },
     {
         'name': '02-09-imaging.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_INTERVENTION,
         'subcategory': SUBCATEGORY_IMAGING_REPORT,
+        'exclude_columns': [
+            'headSonogramResult2',
+            'headSonogramResult3',
+            'headSonogramResult4',
+            'headSonogramResult5',
+            'headSonogramResult6',
+            'headSonogramResult7',
+            'headSonogramResult8',
+            'headCTResult2',
+            'headCTResult3',
+            'headCTResult4',
+            'headCTResult5',
+            'headCTResult6',
+            'headCTResult7',
+            'headCTResult8',
+            'brainMRIResult2',
+            'brainMRIResult3',
+            'brainMRIResult4',
+            'brainMRIResult5',
+            'brainMRIResult6',
+            'brainMRIResult7',
+            'brainMRIResult8',
+        ],
     },
     {
         'name': '02-11-elevated-temperature.csv',
@@ -481,11 +648,53 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_POST_INTERVENTION,
         'subcategory': SUBCATEGORY_IMAGING_REPORT,
+        'exclude_columns': [
+            'post_HeadSonogramResult2',
+            'post_HeadSonogramResult3',
+            'post_HeadSonogramResult4',
+            'post_HeadSonogramResult5',
+            'post_HeadSonogramResult6',
+            'post_HeadSonogramResult7',
+            'post_HeadSonogramResult8',
+            'post_HeadCTResult2',
+            'post_HeadCTResult3',
+            'post_HeadCTResult4',
+            'post_HeadCTResult5',
+            'post_HeadCTResult6',
+            'post_HeadCTResult7',
+            'post_HeadCTResult8',
+            'post_BrainMRIResult2',
+            'post_BrainMRIResult3',
+            'post_BrainMRIResult4',
+            'post_BrainMRIResult5',
+            'post_BrainMRIResult6',
+            'post_BrainMRIResult7',
+            'post_BrainMRIResult8',
+        ],
     },
     {
         'name': '03-04-post-neuro-exam.csv',
         'data_dict': SHEET_MAIN,
-        'exclude_columns': ['post_NeuroExamSectionID'],
+        'exclude_columns': [
+            'post_NeuroExamSectionID',
+        ],
+        'category': CATEGORY_POST_INTERVENTION,
+        'subcategory': SUBCATEGORY_NEURO_EXAM,
+    },
+    {
+        'name': '03-04_1-total-modified-sarnat.csv',
+        'data_dict': SHEET_MAIN,
+        'exclude_columns': [
+            'post_NeuroExamLevelConsciousnessScore',
+            'post_NeuroExamSpontaneousActivityScore',
+            'post_NeuroExamPostureScore',
+            'post_NeuroExamToneScore',
+            'post_NeuroExamSuckScore',
+            'post_NeuroExamMoroScore',
+            'post_NeuroExamPupilsScore',
+            'post_NeuroExamHeartRateScore',
+            'post_NeuroExamRespirationScore',
+        ],
         'category': CATEGORY_POST_INTERVENTION,
         'subcategory': SUBCATEGORY_NEURO_EXAM,
     },
@@ -493,6 +702,9 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'name': '03-05-mri.csv',
         'data_dict': SHEET_MAIN,
         'exclude_columns': [
+            'MRIDate',
+            'MRIReader',
+            'MRIReadDate',
             'MRIStrength_c',
             'MRIAdequateQuality_c',
             'MRIT1Axial_c',
@@ -516,14 +728,28 @@ FILENAME_INFOS: list[FilenameInfo] = [
             'MRIOther_c',
             'MRIOverallDiagnosis_c',
             'MRIAbnormal_c',
-            'MRICererbalAtrophy_c',
-            'MRICererbalAtrophyGlobalLocal_c',
-            'MRICererbalAtrophyQualAssessCC_c',
-            'MRICererbalAtrophyQualAssessVDLeft_c',
-            'MRICererbalAtrophyQualAssessVDRight_c',
+            'MRIAbnormalRegion1_c',
+            'MRIAbnormalRegion2',
+            'MRIAbnormalRegion2_c',
+            'MRIAbnormalRegion3',
+            'MRIAbnormalRegion3_c',
+            'MRIAbnormalSide_c',
+            'MRIAbnormalGrayMatterWhiteMatter_c',
+            'MRIAbnormalExtent1_c',
+            'MRIAbnormalExtent2',
+            'MRIAbnormalExtent2_c',
+            'MRIAbnormalType_c',
+            'MRIAbnormalType2',
+            'MRIAbnormalType2_c',
+
+            'MRICerebralAtrophy_c',
+            'MRICerebralAtrophyGlobalLocal_c',
+            'MRICerebralAtrophyQualAssessCC_c',
+            'MRICerebralAtrophyQualAssessVDLeft_c',
+            'MRICerebralAtrophyQualAssessVDRight_c',
             'MRIInfarction_c',
-            'MRIInfarctionAterialTerritoryLeft_c',
-            'MRIInfarctionAterialTerritoryRight_c',
+            'MRIInfarctionArterialTerritoryLeft_c',
+            'MRIInfarctionArterialTerritoryRight_c',
             'MRIInfarctionWatershedLeft_c',
             'MRIInfarctionWatershedRight_c',
             'MRIMidlineShift_c',
@@ -559,6 +785,16 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'summary': True,
     },
     {
+        'name': '03-05_s1-mri.csv',
+        'data_dict': SHEET_MAIN,
+        'exclude_columns': [
+            'MRINRNPatternOfInjuryMerge',
+        ],
+        'category': CATEGORY_POST_INTERVENTION,
+        'subcategory': SUBCATEGORY_MRI,
+        'summary': True,
+    },
+    {
         'name': '04-01-status.csv',
         'data_dict': SHEET_MAIN,
         'exclude_columns': [
@@ -577,70 +813,114 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'subcategory': SUBCATEGORY_STATUS,
     },
     {
-        'name': '04-03-cardiovascular.csv',
+        'name': '04-01_1-length-of-stay.csv',
+        'data_dict': SHEET_MAIN,
+        'category': CATEGORY_NICU_DISCHARGE,
+        'subcategory': SUBCATEGORY_STATUS,
+    },
+    {
+        'name': '04-02-cardiovascular.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_CARDIOVASCULAR,
     },
     {
-        'name': '04-04-respiratory.csv',
+        'name': '04-03-respiratory.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_RESPIRATORY,
+        'exclude_columns': [
+            'dischargePulmonaryStartDate2',
+            'dischargePulmonaryStartTime2',
+            'dischargePulmonaryEndDate2',
+            'dischargePulmonaryEndTime2',
+            'dischargePulmonaryStartDate3',
+            'dischargePulmonaryStartTime3',
+            'dischargePulmonaryEndDate3',
+            'dischargePulmonaryEndTime3',
+        ],
     },
     {
-        'name': '04-05-hematology.csv',
+        'name': '04-04-hematology.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_HEMATOLOGY_CBC,
     },
     {
-        'name': '04-06-metabolic.csv',
+        'name': '04-05-metabolic.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_METABOLIC,
     },
     {
-        'name': '04-07-renal.csv',
+        'name': '04-06-renal.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_RENAL,
     },
     {
-        'name': '04-08-gastrointestinal.csv',
+        'name': '04-07-gastrointestinal.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_GASTROINTESTINAL,
     },
     {
-        'name': '04-09-skin.csv',
+        'name': '04-08-skin.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_SKIN,
     },
     {
-        'name': '04-10-auditory.csv',
+        'name': '04-09-auditory.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_AUDITORY,
     },
     {
-        'name': '04-11-surgery.csv',
+        'name': '04-10-surgery.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_SURGERY,
+        'exclude_columns': [
+            'dischargeSurgeryCode2',
+            'dischargeSurgeryCode3',
+        ],
     },
     {
-        'name': '04-12-infection.csv',
+        'name': '04-11-infection.csv',
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_INFECTION,
+        'exclude_columns': [
+            'dischargeSepticemiaOrganismCode2',
+            'dischargeSepticemiaOrganismCode3',
+
+            'dischargeMeningitisOrganismCode2',
+            'dischargeMeningitisOrganismCode3',
+        ],
     },
     {
-        'name': '04-02-neuro-exam.csv',
+        'name': '04-12-neuro-exam.csv',
         'data_dict': SHEET_MAIN,
         'exclude_columns': [
             'dischargeNeuroExamStatus',
+        ],
+        'category': CATEGORY_NICU_DISCHARGE,
+        'subcategory': SUBCATEGORY_NEURO_EXAM,
+    },
+    {
+        'name': '04-12_1-total-modified-sarnat.csv',
+        'data_dict': SHEET_MAIN,
+        'exclude_columns': [
+            'dischargeNeuroExamLevelConsciousnessScore',
+            'dischargeNeuroExamSpontaneousActivityScore',
+            'dischargeNeuroExamPostureScore',
+            'dischargeNeuroExamToneScore',
+            'dischargeNeuroExamSuckScore',
+            'dischargeNeuroExamMoroScore',
+            'dischargeNeuroExamPupilsScore',
+            'dischargeNeuroExamHeartRateScore',
+            'dischargeNeuroExamRespirationScore',
         ],
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_NEURO_EXAM,
@@ -656,6 +936,10 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'data_dict': SHEET_MAIN,
         'category': CATEGORY_NICU_DISCHARGE,
         'subcategory': SUBCATEGORY_BIRTH_DEFECT,
+        'exclude_columns': [
+            'dischargeBirthDefectCode2',
+            'dischargeBirthDefectCode3',
+        ],
     },
     {
         'name': '04-15-home-therapy.csv',
@@ -758,73 +1042,22 @@ FILENAME_INFOS: list[FilenameInfo] = [
         'subcategory': SUBCATEGORY_LOST_FOLLOW_UP,
     },
     {
-        'name': '30-01-secondary.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'category': CATEGORY_DERIVED_DATA,
+        'name': '20-09-secondary.csv',
+        'data_dict': SHEET_FOLLOW_UP,
+        'category': CATEGORY_FOLLOW_UP,
         'subcategory': SUBCATEGORY_SECONDARY_ANALYSIS,
     },
     {
-        'name': '30-02-outcome.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'category': CATEGORY_DERIVED_DATA,
+        'name': '20-10-outcome.csv',
+        'data_dict': SHEET_FOLLOW_UP,
+        'category': CATEGORY_FOLLOW_UP,
         'subcategory': SUBCATEGORY_OUTCOME,
     },
     {
-        'name': '30-03-mri.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'category': CATEGORY_DERIVED_DATA,
-        'subcategory': SUBCATEGORY_MRI_DERIVED,
-    },
-    {
-        'name': '31-02-total-modified-sarnat.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'category': CATEGORY_DERIVED_DATA,
-        'subcategory': SUBCATEGORY_NEURO_EXAM_DERIVED,
-    },
-    {
-        'name': '31-03-mri.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'category': CATEGORY_DERIVED_DATA,
-        'subcategory': SUBCATEGORY_MRI_DERIVED,
-    },
-    {
-        'name': '31-04-pse.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'exclude_columns': [
-            'cordMishap',
-            'uterineRupture',
-            'placentalProblem',
-            'shoulderDystocia',
-            'maternalHemorrhage',
-            'maternalTrauma',
-            'maternalCardioRespiratoryArrest',
-            'maternalSeizure',
-            'perinatalSentinelEvent',
-        ],
-        'category': CATEGORY_DERIVED_DATA,
-        'subcategory': SUBCATEGORY_SECONDARY_ANALYSIS,
-    },
-    {
-        'name': '31-05-disability-level-death.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'category': CATEGORY_DERIVED_DATA,
+        'name': '20-10_1-disability-level-death.csv',
+        'data_dict': SHEET_FOLLOW_UP,
+        'category': CATEGORY_FOLLOW_UP,
         'subcategory': SUBCATEGORY_OUTCOME,
-    },
-    {
-        'name': '31-06-emergency-csection.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'exclude_columns': [
-            'deliveryMode',
-            'emergencyCSection',
-        ],
-        'category': CATEGORY_DERIVED_DATA,
-        'subcategory': SUBCATEGORY_SECONDARY_ANALYSIS,
-    },
-    {
-        'name': '31-07-length-of-stay.csv',
-        'data_dict': SHEET_DERIVED_DATA,
-        'category': CATEGORY_DERIVED_DATA,
-        'subcategory': SUBCATEGORY_SECONDARY_ANALYSIS,
     },
 ]
 
