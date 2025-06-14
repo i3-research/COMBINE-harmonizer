@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+pd.options.mode.copy_on_write = True
 from tqdm import tqdm
 import statsmodels.api as sm
 
@@ -17,7 +18,7 @@ def lr(df: pd.DataFrame, x_columns: list[str], y_columns: list[str]):
 
             pvalue = ret_lr.pvalues[x_column]
             tvalue = ret_lr.tvalues[x_column]
-            
+
             ret = {
                 'x': x_column,
                 'y': y_column,
@@ -30,9 +31,10 @@ def lr(df: pd.DataFrame, x_columns: list[str], y_columns: list[str]):
                 'valid-percent': float(meta['valid_percent']),
             }
             rets.append(ret)
-    
+
     df_ret = pd.DataFrame(rets)
-    df_ret_pivot = pd.pivot_table(df_ret, index=['x'], columns=['y'], values=['tvalue', 'pvalue', 'valid', 'valid-percent', 'valid-x', 'valid-y'])
+    df_ret_pivot = pd.pivot_table(df_ret, index=['x'], columns=['y'], values=[
+                                  'tvalue', 'pvalue', 'valid', 'valid-percent', 'valid-x', 'valid-y'])
     df_ret_pivot = df_ret_pivot.sort_values(by=[('pvalue', y_column0)])
     return df_ret_pivot
 

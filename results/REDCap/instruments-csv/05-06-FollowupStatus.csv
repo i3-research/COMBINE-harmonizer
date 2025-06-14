@@ -2,6 +2,7 @@
 followup_center_20_06,followup_status,,text,followup_center,,,,,,,,,,,,,
 followup_id_20_06,followup_status,,text,followup_id,,,,,,,,,,,,,
 unique_followup_id_20_06,followup_status,,text,unique_followup_id,,,,,,,,,,,,,
+site_id_20_06,followup_status,,text,site_id,,,,,,,,,,,,,
 status_visit_date_20_06,followup_status,,text,status_visit_date,,,,,,,,,,,,,
 status_birth_date_20_06,followup_status,,text,status_birth_date,,,,,,,,,,,,,
 child_final_status_20_06,followup_status,,radio,child_final_status,"1, child seen, follow-up visit completed | 2, died after initial discharge to home | 3, lost to follow-up | 4, follow-up visit completed in another NRN center | 5, child seen, but follow-up visit incomplete",followupStatus,,,,,,,,,,,

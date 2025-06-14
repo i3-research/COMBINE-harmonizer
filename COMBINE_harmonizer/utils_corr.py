@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
+pd.options.mode.copy_on_write = True
 import numpy as np
 
 from scipy import stats
@@ -69,7 +70,8 @@ def _corr_coeff(df: pd.DataFrame, x: str, y: str):
         'valid_percent': float(is_valid.sum()) / float(len(df)),
     }
 
-    print(f'_corr_coeff: to eval: x: {x} y: {y} valid_x: {is_valid_x.sum()} valid_y: {is_valid_y.sum()}')
+    print(
+        f'_corr_coeff: to eval: x: {x} y: {y} valid_x: {is_valid_x.sum()} valid_y: {is_valid_y.sum()}')
     if is_valid.sum() < 20:
         print(f'[WARN] _corr_coeff: too few valid samples: x: {x} y: {y} valid: {is_valid.sum()}')
         return None, meta
@@ -123,12 +125,14 @@ def plot_corr(df, x_column, y_column, x_column_info=None, y_column_info=None):
 
     # title
     plus_sign = ' + ' if b >= 0 else ' '
-    title = '$y = %sx%s%s$\n$(n = %s, R^2 \\approx %s, p \\approx %s)$' % (m_str, plus_sign, b_str, len(df_valid), r2value_str, pvalue_str)
+    title = '$y = %sx%s%s$\n$(n = %s, R^2 \\approx %s, p \\approx %s)$' % (
+        m_str, plus_sign, b_str, len(df_valid), r2value_str, pvalue_str)
     plt.title(title)
 
     # heat-map / scatter-plot
     if df_groupby['_count'].max() > 2:
-        plt.scatter(x=df_groupby[x_column], y=df_groupby[y_column], c=df_groupby['_count'], cmap='plasma')
+        plt.scatter(x=df_groupby[x_column], y=df_groupby[y_column],
+                    c=df_groupby['_count'], cmap='plasma')
         cbar = plt.colorbar()
         cbar.ax.set_ylabel('number of patients', rotation=270, labelpad=7)
     else:
