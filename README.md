@@ -7,6 +7,10 @@ Currently the following datasets are included:
 * [Late-Hypothermia](https://doi.org/10.57982/hs6z-4j46) ([LH, Laptook et al., JAMA, 2017](https://doi.org/10.1001/jama.2017.14972))
 * [Optimizing-Cooling](https://doi.org/10.57982/yjay-3487) ([OC, Shankaran et al., JAMA, 2017](10.1001/jama.2017.7218))
 
+## Updates
+
+* **2025-09-04** ["Data Harmonization Framework for Neonatal Hypoxic-ischemic Encephalopathy Studies" published in _JAMIA Open_](https://academic.oup.com/jamiaopen/article/8/5/ooaf086/8247856).
+
 ## Getting Started
 
 The results can be reproduced with the following steps:
